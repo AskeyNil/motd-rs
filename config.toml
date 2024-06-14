@@ -1,0 +1,57 @@
+[system]
+
+# title 内容
+title_command = "echo 'rbe' | figlet -f slant"
+# title 的颜色
+title_color = "#d3f"
+
+show_up_time = true
+
+[network]
+interfaces = ["en0", "utun5"]
+show_mac = true
+show_flow = true
+# show_ipv4 = true
+# show_ipv6 = true
+
+# 容器
+[docker]
+
+# 文件系统
+[disk]
+# 默认值为 green
+default_color = "green"
+
+# 默认值为 red
+warning_color = "red"
+
+# 默认值为 0.8
+warning_threshold = 0.8
+
+[disk.mounts]
+"/" = "root"
+# "/System/Volumes/Data" = "data"
+
+# 内存
+[memory]
+
+# 默认 true
+show_ram = true
+
+# 默认 true
+show_swap = true
+
+# 默认值为 green
+default_color = "green"
+
+# 默认值为 red
+warning_color = "red"
+
+# 默认值为 0.8
+warning_threshold = 0.75
+
+# 服务状态
+[service_status]
+
+# 最后登陆时间
+[last_login]
