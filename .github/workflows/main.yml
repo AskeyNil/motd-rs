@@ -1,0 +1,39 @@
+name: Build and Package
+
+# 触发条件，这里是每次 push 或 pull request 到 master 分支时触发
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Build
+        run: cargo build --release
+
+      - name: Install cargo-deb
+        run: cargo install cargo-deb
+
+      - name: Create Debian package
+        run: cargo deb
+
+      - name: Upload Debian package
+        uses: actions/upload-artifact@v2
+        with:
+          name: Debian package
+          path: target/debian/*.deb
