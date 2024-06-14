@@ -20,3 +20,4 @@ unicode-width = "0.1.13"
 
 [package.metadata.deb]
 maintainer = "Yuren Li <askeynil@gmail.com>"
+license-file = ["LICENSE", "4"]
