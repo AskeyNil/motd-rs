@@ -16,3 +16,7 @@ termion = "4.0.0"
 thiserror = "1.0.61"
 toml = "0.8.14"
 unicode-width = "0.1.13"
+
+
+[package.metadata.deb]
+maintainer = "Yuren Li <askeynil@gmail.com>"
