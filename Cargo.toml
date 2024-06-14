@@ -2,6 +2,8 @@
 name = "motd-rs"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+authors = ["Yuren Li <askeynil@gmail.com>"]
 
 [dependencies]
 bollard = "0.16.1"
@@ -16,8 +18,3 @@ termion = "4.0.0"
 thiserror = "1.0.61"
 toml = "0.8.14"
 unicode-width = "0.1.13"
-
-
-[package.metadata.deb]
-maintainer = "Yuren Li <askeynil@gmail.com>"
-license-file = ["LICENSE", "4"]
